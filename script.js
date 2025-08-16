@@ -248,13 +248,19 @@ const navMenu = document.querySelector('.nav-menu');
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeTheme();
-    initializeLanguage();
-    initializeProjectSwitching();
-    initializeMobileMenu();
-    
-    // Set first project as active by default
-    switchProject('project-1');
+    try {
+        console.log('Initializing portfolio application...');
+        initializeTheme();
+        initializeLanguage();
+        initializeProjectSwitching();
+        initializeMobileMenu();
+        
+        // Set first project as active by default
+        switchProject('project-1');
+        console.log('Portfolio application initialized successfully');
+    } catch (error) {
+        console.error('Error initializing portfolio:', error);
+    }
 });
 
 // Theme switching functionality
